@@ -10,8 +10,7 @@ const Home = () => {
     return (
         <div className="flex flex-col bg-background font-red-hat-display text-off-white gap-12 overflow-hidden relative" >
             {/* <img src="images/grain.png" className="absolute top-0 left-0 pointer-events-none w-full z-[99999]" alt="" /> */}
-            <div className="absolute inset-0 opacity-50 z-[99999] pointer-events-none" style={{background: 'url(images/grain.png)'}}>
-                hi
+            <div className="absolute inset-0 opacity-50 z-[99999] pointer-events-none" style={{background: 'url(images/grain.png)'}}>           
             </div>
             <HeroSection />
             <ProjectsSection />
