@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 import { MdMail } from 'react-icons/md'
 
