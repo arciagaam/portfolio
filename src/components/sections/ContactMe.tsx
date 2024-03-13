@@ -19,7 +19,7 @@ const ContactMe = () => {
 
                 <div className="flex flex-col items-start gap-3">
                     <Contact contact={{icon: <MdMail size={24}/>, label: 'miguelarciaga@gmail.com', href: 'mailto:miguelarciaga@gmail.com'}} />
-                    <Contact contact={{icon: <FaLinkedin size={24}/>, label: 'Miguel Arciaga', href: 'www.linkedin.com/in/miguel-arciaga-a85b74269'}} />
+                    <Contact contact={{icon: <FaLinkedin size={24}/>, label: 'Miguel Arciaga', href: 'https://www.linkedin.com/in/miguel-arciaga-a85b74269'}} />
                     <Contact contact={{icon: <FaGithubSquare size={24}/>, label: 'arciagaam (Miguel Arciaga)', href: 'https://github.com/arciagaam'}} />
                 </div>
 

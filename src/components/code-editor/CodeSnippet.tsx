@@ -4,7 +4,7 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 const CodeSnippet = ({ codeSnippet, language = 'html' }: { codeSnippet: string, language?: string }) => {
 
     return (
-        <div className="flex flex-col p-2 gap-1">
+        <div className="flex flex-col p-2 gap-1 max-h-[67vh] overflow-auto">
             <SyntaxHighlighter showLineNumbers lineNumberStyle={{color: '#fafafa20'}} language={language} style={vscDarkPlus} customStyle={{ padding: 0, margin: 0, background: 'transparent' }}>
                 {codeSnippet.trim()}
             </SyntaxHighlighter>

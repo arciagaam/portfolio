@@ -7,6 +7,10 @@ type TProject = {
 
 const _PROJECTS: TProject[] = [
     {
+        name: 'Savvy Bytes',
+        background: 'savvybytes.png'
+    },
+    {
         name: 'Cocoon Technologies',
         background: 'cocoontechnologies.png'
     },
@@ -30,17 +34,16 @@ const _PROJECTS: TProject[] = [
 
 
 const ProjectsSection = () => {
-
-    const [background, setBackground] = useState<string>('');
+    const [hoveredProject, setHoveredProject] = useState<TProject>(_PROJECTS[0])
 
     return (
-        <div className="flex relative h-screen text-off-white !bg-cover" style={{ background: `url(images/${background})` }}>
+        <div className="flex relative h-screen text-off-white !bg-cover" style={{ background: `url(images/${hoveredProject.background})` }}>
 
             <div className="flex flex-col items-start px-28 py-14 gap-5 w-full bg-gradient-to-r from-background from-[27%] to-background/0 to-60%">
                 <h2 className='text-6xl font-mograch text-accent'>Projects</h2>
                 <div className="flex flex-col items-start gap-4">
                     {
-                        _PROJECTS.map((project, index) => <ProjectButton key={index} project={project} setBackground={setBackground} />)
+                        _PROJECTS.map((project, index) => <ProjectButton key={index} project={project} setHoveredProject={setHoveredProject} hoveredProject={hoveredProject} />)
                     }
                 </div>
             </div>
@@ -49,9 +52,9 @@ const ProjectsSection = () => {
     )
 }
 
-const ProjectButton = ({ project, setBackground }: { project: TProject, setBackground: React.Dispatch<React.SetStateAction<string>> }) => {
+const ProjectButton = ({ project, setHoveredProject, hoveredProject }: { project: TProject, setHoveredProject: React.Dispatch<React.SetStateAction<TProject>>, hoveredProject: TProject }) => {
     return (
-        <button onMouseEnter={() => setBackground(project.background)} className="flex items-center text-2xl hover:text-accent transition-all">
+        <button onMouseEnter={() => setHoveredProject(project)} className={`${project.name == hoveredProject.name ? 'text-accent' : ''} flex items-center text-2xl hover:text-accent transition-all`}>
             {project.name}
         </button>
     )
